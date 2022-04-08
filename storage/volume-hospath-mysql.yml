@@ -11,13 +11,13 @@ spec:
       mountPath: /var/lib/mysql
     env:
     - name: MYSQL_USER
-      value: easytraining
+      value: soumvaf
     - name: MYSQL_DATABASE
-      value: easy
+      value: vafe_db
     - name: MYSQL_PASSWORD
-      value: easy
+      value: vafe_pwd
     - name: MYSQL_ROOT_PASSWORD
-      value: password
+      value: vafe_pwd_db
 
   volumes:
   - name: mysql-data

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-volume-pv
+spec:
+  containers:
+  - name: mysql
+    image: mysql
+    volumeMounts:
+    - name: mysql-data-pvc
+      mountPath: /var/lib/mysql
+    env:
+    - name: MYSQL_USER
+      value: soumvaf
+    - name: MYSQL_DATABASE
+      value: vafe_db
+    - name: MYSQL_PASSWORD
+      value: vafe_pwd
+    - name: MYSQL_ROOT_PASSWORD
+      value: vafe_pwd_db
+
+  volumes:
+  - name: mysql-data-pvc
+    persistentVolumeClaim:
+      claimName: vafe-pv-claim
